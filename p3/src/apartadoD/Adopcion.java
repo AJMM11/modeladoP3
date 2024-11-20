@@ -1,7 +1,6 @@
 import java.util.Date;
 
 public class Adopcion {
-
     private Date fecha;
     private Adoptante adoptante;
     private Animal animal;

@@ -1,3 +1,4 @@
+import java.util.Enumeration;
 import java.util.List;
 
 public class Refugio {
@@ -20,12 +21,12 @@ public class Refugio {
         this.liquidez = liquidez;
     }
 
-    public List<Animal> getAnimalesRefugiados() {
-        return (List<Animal>) animalesRefugiados;
+    public Enumeration<Animal> getAnimalesRefugiados() {
+        return (Enumeration<Animal>) animalesRefugiados;
     }
 
-    public List<Animal> getAnimalesRegistrados() {
-        return (List<Animal>) animalesRegistrados;
+    public Enumeration<Animal> getAnimalesRegistrados() {
+        return (Enumeration<Animal>) animalesRegistrados;
     }
 
     public void anadirCantidad(Double c){
