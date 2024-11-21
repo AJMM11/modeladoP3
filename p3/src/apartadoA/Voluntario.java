@@ -14,11 +14,14 @@ public class Voluntario extends Socio {
     }
 
     public Enumeration<Adopcion> getTramites() {
-        return (Enumeration<Adopcion>) tramites;
+        return (Enumeration<Adopcion>) java.util.Collections.enumeration(tramites);
     }
 
     //Operacion tramitarAdopcion
     public void tramitarAdopcion(Animal a, Adoptante ad){
+        if(a == null || ad == null){
+            throw new IllegalArgumentException("Animal o Adoptante no puede ser null");
+        }
         a.setEstado(EstadoAnimal.adoptado); // Cambio el estado del animal a adoptado
         Adopcion adopcion = new Adopcion(new Date(), ad, a); // Creo una nueva adopcion
         a.setAdopcion(adopcion); // Asigno la adopcion al animal
