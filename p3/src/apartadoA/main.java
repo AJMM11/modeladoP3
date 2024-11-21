@@ -84,8 +84,13 @@ public class main {
             System.out.println("- " + animalesConNombres.entrySet().stream()
                 .filter(entry -> entry.getValue().equals(adopcion.getAnimal())).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
 
+        System.out.println("Y los animales cuya adopción ha sido gestionada por Antonio son:");
+        Antonio.getTramites().asIterator().forEachRemaining(adopcion -> 
+            System.out.println("- " + animalesConNombres.entrySet().stream()
+                .filter(entry -> entry.getValue().equals(adopcion.getAnimal())).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
 
-        System.out.println("Pero los animales registrados siguen siendo:");
+
+        System.out.println("Pero los animales registrados en el refugio siguen siendo:");
         refugio.getAnimalesRegistrados().asIterator().forEachRemaining(animal -> 
             System.out.println("- " + animalesConNombres.entrySet().stream()
                 .filter(entry -> entry.getValue().equals(animal)).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
