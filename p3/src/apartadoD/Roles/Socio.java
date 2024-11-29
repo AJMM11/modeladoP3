@@ -1,15 +1,13 @@
 package apartadoD.Roles;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.Enumeration;
-import java.util.Map;
 
 import apartadoD.Refugio;
 import apartadoD.RolesDisponibles;
 
+import java.util.Collections;
+import java.util.Date;
+import java.util.Enumeration;
+import java.util.Map;
 import java.util.HashMap;
-import java.util.List;
 
 public class Socio {
 
@@ -62,12 +60,8 @@ public class Socio {
     }
 
     // Devuelve el nombre de los roles asignados al socio
-    public Enumeration<RolesDisponibles> getRoles() {
-        List<RolesDisponibles> listaRoles = new ArrayList<>();
-        for(RolesDisponibles rol : roles.keySet()) {
-            listaRoles.add(rol);
-        }
-        return Collections.enumeration(listaRoles);
+    public Enumeration<RolesDisponibles> getRolesNames() {
+        return Collections.enumeration(roles.keySet());
     }
 
     // Devuelve el nombre de los roles asignables

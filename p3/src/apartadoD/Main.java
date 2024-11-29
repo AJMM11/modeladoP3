@@ -40,14 +40,19 @@ public class Main {
             donacionesAntonio.add(new Donacion(100.0, new Date()));
             Antonio.addRol(new Donante(donacionesAntonio, Antonio));
             Antonio.addRol(new Voluntario(new ArrayList<>(), Antonio));
-            Maribel.addRol(new Adoptante(new ArrayList<>(), Maribel));
-            
+            Maribel.addRol(new Adoptante(new ArrayList<>()));
+
+            System.out.println("Los roles de Antonio son:");
+            Antonio.getRolesNames().asIterator().forEachRemaining(rol -> System.out.println("- " + rol));
+            System.out.println("Los roles de Maribel son:");
+            Maribel.getRolesNames().asIterator().forEachRemaining(rol -> System.out.println("- " + rol));
+
             // Antonio registra a los otros dos animales mediante su rol Voluntario
             ((Voluntario) Antonio.getRolInstance(RolesDisponibles.VOLUNTARIO)).registrar(gataLuna);
             ((Voluntario) Antonio.getRolInstance(RolesDisponibles.VOLUNTARIO)).registrar(gataKitty);
     
     
-            System.out.println("Los animales registrados son:");
+            System.out.println("\nLos animales registrados son:");
             refugio.getAnimalesRegistrados().asIterator().forEachRemaining(animal -> 
                 System.out.println("- " + animalesConNombres.entrySet().stream()
                     .filter(entry -> entry.getValue().equals(animal)).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
