@@ -18,9 +18,9 @@ public class Refugio {
     public Double getLiquidez() {
         return liquidez;
     }
-
-    public void setLiquidez(Double liquidez) {
-        this.liquidez = liquidez;
+    
+    public void anadirCantidad(Double c){
+        this.liquidez += c;
     }
 
     public Enumeration<Animal> getAnimalesRefugiados() {
@@ -31,9 +31,6 @@ public class Refugio {
         return (Enumeration<Animal>) java.util.Collections.enumeration(animalesRegistrados);
     }
 
-    public void anadirCantidad(Double c){
-        this.liquidez += c;
-    }
 
     public void eliminarAnimalRefugiado(Animal a){
         if (animalesRefugiados.contains(a)){
