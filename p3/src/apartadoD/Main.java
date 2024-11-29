@@ -34,14 +34,13 @@ public class Main {
             //Creamos los socios
             Socio Antonio = new Socio(new Date(), refugio);
             Socio Maribel = new Socio(new Date(), refugio);
-            Socio Juan = new Socio(new Date(), refugio);
             
-            //Creamos los roles (donante Juan debe tener 1 donacion para crearlo)
+            //Creamos los roles, una persona puede tener varios (donante Antonio debe tener 1 donacion para crearlo)
+            List<Donacion> donacionesAntonio = new ArrayList<>();
+            donacionesAntonio.add(new Donacion(100.0, new Date()));
+            Antonio.addRol(new Donante(donacionesAntonio, Antonio));
             Antonio.addRol(new Voluntario(new ArrayList<>(), Antonio));
             Maribel.addRol(new Adoptante(new ArrayList<>(), Maribel));
-            List<Donacion> donacionesJuan = new ArrayList<>();
-            donacionesJuan.add(new Donacion(100.0, new Date()));
-            Juan.addRol(new Donante(donacionesJuan, Juan));
             
             // Antonio registra a los otros dos animales mediante su rol Voluntario
             ((Voluntario) Antonio.getRolInstance(RolesDisponibles.VOLUNTARIO)).registrar(gataLuna);
@@ -58,10 +57,10 @@ public class Main {
                 System.out.println("- " + animalesConNombres.entrySet().stream()
                     .filter(entry -> entry.getValue().equals(animal)).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
     
-            //Juan dona 1000 euros con su rol Donante
+            //Antonio dona 1000 euros con su rol Donante
             System.out.println("\nEl refugio tiene una liquidez de: " + refugio.getLiquidez());
-            System.out.println("Juan dona 1000 euros");
-            ((Donante) Juan.getRolInstance(RolesDisponibles.DONANTE)).donar(1000.0);
+            System.out.println("Antonio dona 1000 euros");
+            ((Donante) Antonio.getRolInstance(RolesDisponibles.DONANTE)).donar(1000.0);
             System.out.println("El refugio tiene una liquidez de: " + refugio.getLiquidez());
     
             //Maribel adopta a perroMax
