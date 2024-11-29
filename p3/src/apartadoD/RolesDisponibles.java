@@ -1,7 +1,7 @@
 package apartadoD;
-import Roles.Adoptante;
-import Roles.Donante;
-import Roles.Voluntario;
+import apartadoD.Roles.Adoptante;
+import apartadoD.Roles.Donante;
+import apartadoD.Roles.Voluntario;
 
 public enum RolesDisponibles {
     ADOPTANTE(Adoptante.class),

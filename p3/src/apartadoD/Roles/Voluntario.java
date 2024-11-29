@@ -8,17 +8,16 @@ import apartadoD.Animal;
 import apartadoD.EstadoAnimal;
 import apartadoD.Refugio;
 
-public class Voluntario extends Socio {
+public class Voluntario {
 
     private List<Adopcion> tramites;
 
-    public Voluntario(Date registro, Refugio refugio, List<Adopcion> tramites) {
-        super(registro, refugio);
+    public Voluntario(List<Adopcion> tramites) {
         this.tramites = tramites;
     }
 
     public Enumeration<Adopcion> getTramites() {
-        return (Enumeration<Adopcion>) tramites;
+        return java.util.Collections.enumeration(tramites);
     }
 
     //Operacion tramitarAdopcion

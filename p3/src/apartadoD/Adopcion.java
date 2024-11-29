@@ -1,7 +1,7 @@
 package apartadoD;
 import java.util.Date;
 
-import Roles.Adoptante;
+import apartadoD.Roles.Adoptante;
 
 public class Adopcion {
     private Date fecha;

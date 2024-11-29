@@ -1,4 +1,5 @@
 package apartadoD;
+
 import java.util.Enumeration;
 import java.util.List;
 
@@ -23,11 +24,11 @@ public class Refugio {
     }
 
     public Enumeration<Animal> getAnimalesRefugiados() {
-        return (Enumeration<Animal>) animalesRefugiados;
+        return java.util.Collections.enumeration(animalesRefugiados);
     }
 
     public Enumeration<Animal> getAnimalesRegistrados() {
-        return (Enumeration<Animal>) animalesRegistrados;
+        return java.util.Collections.enumeration(animalesRegistrados);
     }
 
     public void anadirCantidad(Double c){
