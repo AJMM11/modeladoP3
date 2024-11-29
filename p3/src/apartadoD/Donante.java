@@ -1,5 +1,3 @@
-package apartadoA;
-
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
@@ -10,19 +8,11 @@ public class Donante extends Socio {
 
     public Donante(Date registro, Refugio refugio, List<Donacion> donaciones) {
         super(registro, refugio);
-        if(donaciones == null || donaciones.isEmpty()){
-            throw new IllegalArgumentException("La lista de donaciones no puede ser nula");
-        }
         this.donaciones = donaciones;
-        for(Donacion d : donaciones){
-            if(d.getCantidad() > 0 || d!=null){
-                this.getRefugio().anadirCantidad(d.getCantidad());
-            }
-        }
     }
 
     public Enumeration<Donacion> getDonaciones() {
-        return (Enumeration<Donacion>) java.util.Collections.enumeration(donaciones);
+        return (Enumeration<Donacion>) donaciones;
     }
 
     //Operacion donar

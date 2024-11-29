@@ -1,5 +1,3 @@
-package apartadoA;
-
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
@@ -15,7 +13,7 @@ public class Adoptante extends Socio{
     }
 
     public Enumeration<Adopcion> getAdopciones() {
-        return (Enumeration<Adopcion>) java.util.Collections.enumeration(adopciones);
+        return (Enumeration<Adopcion>) adopciones;
     }
 
     public void addAdopcion(Adopcion a){
@@ -24,11 +22,7 @@ public class Adoptante extends Socio{
 
     //Operacion adoptar
     public void adoptar(Animal a, Voluntario v){
-        if (a == null || v == null) {
-            throw new IllegalArgumentException("Animal o Voluntario no puede ser null");
-        }
-            
         v.tramitarAdopcion(a, this); // Mando al voluntario a tramitar la adopcion
-
     }
+
 }

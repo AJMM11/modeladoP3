@@ -1,5 +1,3 @@
-package apartadoA;
-
 import java.util.Date;
 
 public class Socio {
@@ -8,9 +6,6 @@ public class Socio {
     private Refugio refugio;
 
     public Socio(Date registro, Refugio refugio) {
-        if (refugio == null) {
-            throw new IllegalArgumentException("Todo socio debe pertenecer a un refugio");
-        }
         this.registro = registro;
         this.refugio = refugio;
     }
