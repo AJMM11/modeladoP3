@@ -12,7 +12,7 @@ public class Donante extends Rol{
     private List<Donacion> donaciones;
     private Socio socioRelacionado;
 
-    public Donante(Socio socio, List<Donacion> donaciones) {
+    public Donante(List<Donacion> donaciones, Socio socio) {
         super(RolesDisponibles.DONANTE);
         this.socioRelacionado = socio;
         this.donaciones = donaciones;

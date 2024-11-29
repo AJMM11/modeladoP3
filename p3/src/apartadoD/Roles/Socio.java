@@ -53,7 +53,7 @@ public class Socio {
     }
 
     // Devuelve la instancia del rol solicitado, excepción si no tiene ese rol
-    public Object getRol(RolesDisponibles rol) throws Exception {
+    public Object getRolInstance(RolesDisponibles rol) throws Exception {
         Object claseRol = roles.get(rol);
         if(claseRol == null)
             throw new IllegalArgumentException("El socio no tiene un rol del tipo: " + rol);

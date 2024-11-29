@@ -13,7 +13,7 @@ public class Voluntario extends Rol{
     private List<Adopcion> tramites;
     private Socio socioRelacionado;
 
-    public Voluntario(Socio socio, List<Adopcion> tramites) {
+    public Voluntario(List<Adopcion> tramites, Socio socio) {
         super(RolesDisponibles.VOLUNTARIO);
         this.socioRelacionado = socio;
         this.tramites = tramites;

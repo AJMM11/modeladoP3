@@ -9,11 +9,13 @@ import apartadoD.RolesDisponibles;
 public class Adoptante extends Rol{
 
     private List<Adopcion> adopciones;
+    private Socio socioRelacionado;
 
 
-    public Adoptante(List<Adopcion> adopciones) {
+    public Adoptante(List<Adopcion> adopciones, Socio socio) {
         super(RolesDisponibles.ADOPTANTE);
         this.adopciones = adopciones;
+        this.socioRelacionado = socio;
     }
 
     public Enumeration<Adopcion> getAdopciones() {
