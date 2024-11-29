@@ -71,7 +71,7 @@ public class Main {
                 System.out.println("- " + animalesConNombres.entrySet().stream()
                     .filter(entry -> entry.getValue().equals(animal)).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
     
-            System.out.println("Y los animales adoptados por Maribel son:");
+            System.out.println("\nY los animales adoptados por Maribel son:");
             ((Adoptante) Maribel.getRolInstance(RolesDisponibles.ADOPTANTE)).getAdopciones().asIterator().forEachRemaining(adopcion -> 
                 System.out.println("- " + animalesConNombres.entrySet().stream()
                     .filter(entry -> entry.getValue().equals(adopcion.getAnimal())).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
@@ -84,7 +84,7 @@ public class Main {
                 System.out.println("- " + animalesConNombres.entrySet().stream()
                     .filter(entry -> entry.getValue().equals(animal)).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
     
-            System.out.println("Y los animales adoptados por Maribel son:");
+            System.out.println("\nY los animales adoptados por Maribel son:");
             ((Adoptante) Maribel.getRolInstance(RolesDisponibles.ADOPTANTE)).getAdopciones().asIterator().forEachRemaining(adopcion -> 
                 System.out.println("- " + animalesConNombres.entrySet().stream()
                     .filter(entry -> entry.getValue().equals(adopcion.getAnimal())).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
