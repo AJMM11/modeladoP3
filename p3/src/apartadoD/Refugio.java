@@ -1,3 +1,6 @@
+package apartadoD;
+
+import java.util.Enumeration;
 import java.util.List;
 
 public class Refugio {
@@ -12,7 +15,7 @@ public class Refugio {
         this.animalesRegistrados = animalesRegistrados;
     }
 
-    public Double getLiquidez() {
+	public Double getLiquidez() {
         return liquidez;
     }
 
@@ -20,12 +23,12 @@ public class Refugio {
         this.liquidez = liquidez;
     }
 
-    public List<Animal> getAnimalesRefugiados() {
-        return (List<Animal>) animalesRefugiados;
+    public Enumeration<Animal> getAnimalesRefugiados() {
+        return java.util.Collections.enumeration(animalesRefugiados);
     }
 
-    public List<Animal> getAnimalesRegistrados() {
-        return (List<Animal>) animalesRegistrados;
+    public Enumeration<Animal> getAnimalesRegistrados() {
+        return java.util.Collections.enumeration(animalesRegistrados);
     }
 
     public void anadirCantidad(Double c){
@@ -35,7 +38,7 @@ public class Refugio {
     public void eliminarAnimalRefugiado(Animal a){
         animalesRefugiados.remove(a);
     }
-    
+
     //Operacion registrar animal
     public void registrar(Animal a){ // Pasamos el estado a disponible, y lo registramos
         a.setEstado(EstadoAnimal.disponible);
