@@ -1,4 +1,7 @@
+package apartadoD;
 import java.util.Date;
+
+import Roles.Adoptante;
 
 public class Adopcion {
     private Date fecha;
@@ -34,5 +37,5 @@ public class Adopcion {
     public void setAnimal(Animal animal) {
         this.animal = animal;
     }
-    
+
 }

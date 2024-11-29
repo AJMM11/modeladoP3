@@ -1,3 +1,8 @@
+package apartadoD;
+import Roles.Adoptante;
+import Roles.Donante;
+import Roles.Voluntario;
+
 public enum RolesDisponibles {
     ADOPTANTE(Adoptante.class),
     DONANTE(Donante.class),
@@ -11,5 +16,14 @@ public enum RolesDisponibles {
 
     public Class<?> getClaseRol() {
         return claseRol;
+    }
+
+    public static RolesDisponibles getNombreRol(Class<?> claseRol) {
+        for (RolesDisponibles r : RolesDisponibles.values()) {
+            if (r.getClaseRol().equals(claseRol)) {
+                return r;
+            }
+        }
+        return null;
     }
 }

@@ -1,13 +1,17 @@
+package apartadoD.Roles;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
 
-public class Donante extends Socio {
+import apartadoD.Donacion;
+import apartadoD.Refugio;
+
+public class Donante {
 
     private List<Donacion> donaciones;
+    private Socio socioRelacionado;
 
     public Donante(Date registro, Refugio refugio, List<Donacion> donaciones) {
-        super(registro, refugio);
         this.donaciones = donaciones;
     }
 
@@ -19,7 +23,7 @@ public class Donante extends Socio {
     public void donar(Double c){
         Donacion d = new Donacion(c, new Date()); //Creo una nueva donacion
         donaciones.add(d); // Agrego la donacion a la lista de donaciones
-        this.getRefugio().anadirCantidad(c); // Sumo la liquidez al refugio
+        socioRelacionado.getRefugio().anadirCantidad(c); // Sumo la liquidez al refugio
     }
 
 }

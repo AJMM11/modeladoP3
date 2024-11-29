@@ -1,6 +1,12 @@
+package apartadoD.Roles;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
+
+import apartadoD.Adopcion;
+import apartadoD.Animal;
+import apartadoD.EstadoAnimal;
+import apartadoD.Refugio;
 
 public class Voluntario extends Socio {
 
@@ -29,5 +35,5 @@ public class Voluntario extends Socio {
     public void registrar(Animal a){ // Hacemos que el refugio registre al animal
         this.getRefugio().registrar(a);
     }
-    
+
 }

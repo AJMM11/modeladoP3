@@ -1,3 +1,4 @@
+package apartadoD;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class Refugio {
         this.animalesRegistrados = animalesRegistrados;
     }
 
-    public Double getLiquidez() {
+	public Double getLiquidez() {
         return liquidez;
     }
 
@@ -36,7 +37,7 @@ public class Refugio {
     public void eliminarAnimalRefugiado(Animal a){
         animalesRefugiados.remove(a);
     }
-    
+
     //Operacion registrar animal
     public void registrar(Animal a){ // Pasamos el estado a disponible, y lo registramos
         a.setEstado(EstadoAnimal.disponible);

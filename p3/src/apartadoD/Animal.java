@@ -1,3 +1,4 @@
+package apartadoD;
 import java.util.Date;
 
 public class Animal {
@@ -35,5 +36,5 @@ public class Animal {
     public void setAdopcion(Adopcion adopcion) {
         this.adopcion = adopcion;
     }
-    
+
 }

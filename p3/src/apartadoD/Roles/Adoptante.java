@@ -1,5 +1,9 @@
+package apartadoD.Roles;
 import java.util.Enumeration;
 import java.util.List;
+
+import apartadoD.Adopcion;
+import apartadoD.Animal;
 
 public class Adoptante {
 
@@ -11,7 +15,7 @@ public class Adoptante {
     }
 
     public Enumeration<Adopcion> getAdopciones() {
-        return (Enumeration<Adopcion>) adopciones;
+        return (Enumeration<Adopcion>) java.util.Collections.enumeration(adopciones);
     }
 
     public void addAdopcion(Adopcion a){

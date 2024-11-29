@@ -1,3 +1,4 @@
+package apartadoD;
 import java.util.Date;
 
 public class Donacion {
