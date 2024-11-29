@@ -19,7 +19,7 @@ public class Adoptante extends Rol{
     }
 
     public Enumeration<Adopcion> getAdopciones() {
-        return (Enumeration<Adopcion>) java.util.Collections.enumeration(adopciones);
+        return java.util.Collections.enumeration(adopciones);
     }
 
     public void addAdopcion(Adopcion a){

@@ -53,13 +53,13 @@ public class Main {
                 System.out.println("- " + animalesConNombres.entrySet().stream()
                     .filter(entry -> entry.getValue().equals(animal)).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
     
-            System.out.println("Los animales refugiados son:");
+            System.out.println("\nLos animales refugiados son:");
             refugio.getAnimalesRefugiados().asIterator().forEachRemaining(animal -> 
                 System.out.println("- " + animalesConNombres.entrySet().stream()
                     .filter(entry -> entry.getValue().equals(animal)).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
     
             //Juan dona 1000 euros con su rol Donante
-            System.out.println("El refugio tiene una liquidez de: " + refugio.getLiquidez());
+            System.out.println("\nEl refugio tiene una liquidez de: " + refugio.getLiquidez());
             System.out.println("Juan dona 1000 euros");
             ((Donante) Juan.getRolInstance(RolesDisponibles.DONANTE)).donar(1000.0);
             System.out.println("El refugio tiene una liquidez de: " + refugio.getLiquidez());
@@ -67,7 +67,7 @@ public class Main {
             //Maribel adopta a perroMax
             ((Adoptante) Maribel.getRolInstance(RolesDisponibles.ADOPTANTE)).adoptar(perroMax, (Voluntario) Antonio.getRolInstance(RolesDisponibles.VOLUNTARIO));
     
-            System.out.println("Maribel adopta a perroMax, ahora los animales refugiados son:");
+            System.out.println("\nMaribel adopta a perroMax, ahora los animales refugiados son:");
             refugio.getAnimalesRefugiados().asIterator().forEachRemaining(animal -> 
                 System.out.println("- " + animalesConNombres.entrySet().stream()
                     .filter(entry -> entry.getValue().equals(animal)).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
@@ -80,7 +80,7 @@ public class Main {
             // Maribel adopta a gataLuna
             ((Adoptante) Maribel.getRolInstance(RolesDisponibles.ADOPTANTE)).adoptar(gataLuna, (Voluntario) Antonio.getRolInstance(RolesDisponibles.VOLUNTARIO));
     
-            System.out.println("Maribel adopta a gataLuna, ahora los animales refugiados son:");
+            System.out.println("\nMaribel adopta a gataLuna, ahora los animales refugiados son:");
             refugio.getAnimalesRefugiados().asIterator().forEachRemaining(animal -> 
                 System.out.println("- " + animalesConNombres.entrySet().stream()
                     .filter(entry -> entry.getValue().equals(animal)).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
@@ -90,13 +90,13 @@ public class Main {
                 System.out.println("- " + animalesConNombres.entrySet().stream()
                     .filter(entry -> entry.getValue().equals(adopcion.getAnimal())).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
     
-            System.out.println("Y los animales cuya adopción ha sido gestionada por Antonio son:");
+            System.out.println("\nY los animales cuya adopción ha sido gestionada por Antonio son:");
             ((Voluntario) Antonio.getRolInstance(RolesDisponibles.VOLUNTARIO)).getTramites().asIterator().forEachRemaining(adopcion -> 
                 System.out.println("- " + animalesConNombres.entrySet().stream()
                     .filter(entry -> entry.getValue().equals(adopcion.getAnimal())).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));
     
     
-            System.out.println("Pero los animales registrados en el refugio siguen siendo:");
+            System.out.println("\nPero los animales registrados en el refugio siguen siendo:");
             refugio.getAnimalesRegistrados().asIterator().forEachRemaining(animal -> 
                 System.out.println("- " + animalesConNombres.entrySet().stream()
                     .filter(entry -> entry.getValue().equals(animal)).map(Map.Entry::getKey).findFirst().orElse("Animal sin nombre")));

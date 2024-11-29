@@ -1,10 +1,10 @@
 package apartadoD.Roles;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
 
 import apartadoD.Donacion;
-import apartadoD.Refugio;
 import apartadoD.RolesDisponibles;
 
 public class Donante extends Rol{
@@ -19,7 +19,7 @@ public class Donante extends Rol{
     }
 
     public Enumeration<Donacion> getDonaciones() {
-        return (Enumeration<Donacion>) donaciones;
+        return Collections.enumeration(donaciones);
     }
 
     //Operacion donar

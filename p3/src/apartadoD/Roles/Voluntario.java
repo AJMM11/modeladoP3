@@ -1,4 +1,5 @@
 package apartadoD.Roles;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
@@ -20,7 +21,7 @@ public class Voluntario extends Rol{
     }
 
     public Enumeration<Adopcion> getTramites() {
-        return java.util.Collections.enumeration(tramites);
+        return Collections.enumeration(tramites);
     }
 
     //Operacion tramitarAdopcion
