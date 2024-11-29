@@ -18,9 +18,9 @@ public class Refugio {
 	public Double getLiquidez() {
         return liquidez;
     }
-
-    public void setLiquidez(Double liquidez) {
-        this.liquidez = liquidez;
+    
+    public void anadirCantidad(Double c){
+        this.liquidez += c;
     }
 
     public Enumeration<Animal> getAnimalesRefugiados() {
@@ -31,16 +31,19 @@ public class Refugio {
         return java.util.Collections.enumeration(animalesRegistrados);
     }
 
-    public void anadirCantidad(Double c){
-        this.liquidez += c;
-    }
-
     public void eliminarAnimalRefugiado(Animal a){
-        animalesRefugiados.remove(a);
+        if (animalesRefugiados.contains(a)){
+            animalesRefugiados.remove(a);
+        }else{
+            throw new IllegalArgumentException("El animal no se encuentra en la lista de animales refugiados");
+        }
     }
 
     //Operacion registrar animal
     public void registrar(Animal a){ // Pasamos el estado a disponible, y lo registramos
+        if (a == null) {
+            throw new IllegalArgumentException("El animal no puede ser null");
+        }
         a.setEstado(EstadoAnimal.disponible);
         animalesRegistrados.add(a);
         animalesRefugiados.add(a);
