@@ -29,7 +29,7 @@ public class Voluntario extends Socio {
 
     //Operacion registrar
     public void registrar(Animal a){ // Hacemos que el refugio registre al animal
-        this.getRefugio().registrar(a);
+        this.getRefugio().registrarAnimal(a);
     }
     
 }

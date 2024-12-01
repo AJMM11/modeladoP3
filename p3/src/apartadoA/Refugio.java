@@ -15,7 +15,7 @@ public class Refugio {
         this.animalesRegistrados = animalesRegistrados;
     }
 
-    public Double getLiquidez() {
+    public double getLiquidez() {
         return liquidez;
     }
 
@@ -35,15 +35,21 @@ public class Refugio {
         this.liquidez += c;
     }
 
-    public void eliminarAnimalRefugiado(Animal a){
-        animalesRefugiados.remove(a);
-    }
     
-    //Operacion registrar animal
-    public void registrar(Animal a){ // Pasamos el estado a disponible, y lo registramos
-        a.setEstado(EstadoAnimal.disponible);
-        animalesRegistrados.add(a);
-        animalesRefugiados.add(a);
+    //Operacion registrarAnimal
+    // Pasamos el estado a disponible, y lo registramos
+    public void registrarAnimal(Animal animal) {
+        if (animal.getEstado() != EstadoAnimal.disponible) {
+            animal.setEstado(EstadoAnimal.disponible);
+        }
+        animalesRegistrados.add(animal);
+        animalesRefugiados.add(animal);
+    }
+
+    public void eliminarAnimalRefugiado(Animal animal) {
+        if (!animalesRefugiados.remove(animal)) {
+            throw new IllegalStateException("El animal no está en la lista de refugiados.");
+        }
     }
 
 }
