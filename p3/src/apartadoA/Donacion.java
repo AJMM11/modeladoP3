@@ -12,7 +12,7 @@ public class Donacion {
         this.fecha = fecha;
     }
     
-    public Double getCantidad() {
+    public double getCantidad() {
         return cantidad;
     }
 
