@@ -18,13 +18,15 @@ public class Voluntario extends Socio {
     }
 
     //Operacion tramitarAdopcion
-    public void tramitarAdopcion(Animal a, Adoptante ad){
-        a.setEstado(EstadoAnimal.adoptado); // Cambio el estado del animal a adoptado
-        Adopcion adopcion = new Adopcion(new Date(), ad, a); // Creo una nueva adopcion
-        a.setAdopcion(adopcion); // Asigno la adopcion al animal
-        tramites.add(adopcion); // Agrego la adopcion a la lista de tramites del voluntario
-        ad.addAdopcion(adopcion);; // Agrego la adopcion a la lista de adopciones del adoptante
-        this.getRefugio().eliminarAnimalRefugiado(a);; // Elimino al animal de la lista de animales refugiados
+    public void tramitarAdopcion(Animal animal, Adoptante adoptante) {
+        if (animal.getEstado() != EstadoAnimal.disponible) {
+            throw new IllegalArgumentException("El animal no está disponible para adopción.");
+        }
+        animal.setEstado(EstadoAnimal.adoptado);
+        Adopcion adopcion = new Adopcion(new Date(), adoptante, animal);
+        adoptante.addAdopcion(adopcion);
+        tramites.add(adopcion);
+        this.getRefugio().eliminarAnimalRefugiado(animal);
     }
 
     //Operacion registrar
