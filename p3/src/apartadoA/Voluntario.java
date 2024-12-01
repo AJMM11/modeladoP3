@@ -24,6 +24,7 @@ public class Voluntario extends Socio {
         }
         animal.setEstado(EstadoAnimal.adoptado);
         Adopcion adopcion = new Adopcion(new Date(), adoptante, animal);
+        animal.setAdopcion(adopcion);
         adoptante.addAdopcion(adopcion);
         tramites.add(adopcion);
         this.getRefugio().eliminarAnimalRefugiado(animal);
