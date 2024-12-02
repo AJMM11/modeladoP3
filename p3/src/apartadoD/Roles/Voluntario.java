@@ -1,18 +1,27 @@
+package apartadoD.Roles;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
 
-public class Voluntario extends Socio {
+import apartadoD.Adopcion;
+import apartadoD.Animal;
+import apartadoD.EstadoAnimal;
+import apartadoD.RolesDisponibles;
+
+public class Voluntario extends Rol{
 
     private List<Adopcion> tramites;
+    private Socio socioRelacionado;
 
-    public Voluntario(Date registro, Refugio refugio, List<Adopcion> tramites) {
-        super(registro, refugio);
+    public Voluntario(List<Adopcion> tramites, Socio socio) {
+        super(RolesDisponibles.VOLUNTARIO);
+        this.socioRelacionado = socio;
         this.tramites = tramites;
     }
 
     public Enumeration<Adopcion> getTramites() {
-        return (Enumeration<Adopcion>) tramites;
+        return Collections.enumeration(tramites);
     }
 
     //Operacion tramitarAdopcion
@@ -22,12 +31,12 @@ public class Voluntario extends Socio {
         a.setAdopcion(adopcion); // Asigno la adopcion al animal
         tramites.add(adopcion); // Agrego la adopcion a la lista de tramites del voluntario
         ad.addAdopcion(adopcion);; // Agrego la adopcion a la lista de adopciones del adoptante
-        this.getRefugio().eliminarAnimalRefugiado(a);; // Elimino al animal de la lista de animales refugiados
+        socioRelacionado.getRefugio().eliminarAnimalRefugiado(a);; // Elimino al animal de la lista de animales refugiados
     }
 
     //Operacion registrar
     public void registrar(Animal a){ // Hacemos que el refugio registre al animal
-        this.getRefugio().registrar(a);
+        socioRelacionado.getRefugio().registrar(a);
     }
-    
+
 }

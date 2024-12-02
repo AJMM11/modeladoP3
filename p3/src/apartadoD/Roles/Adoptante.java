@@ -1,19 +1,22 @@
-import java.util.Date;
+package apartadoD.Roles;
 import java.util.Enumeration;
 import java.util.List;
 
-public class Adoptante extends Socio{
+import apartadoD.Adopcion;
+import apartadoD.Animal;
+import apartadoD.RolesDisponibles;
+
+public class Adoptante extends Rol{
 
     private List<Adopcion> adopciones;
 
-
-    public Adoptante(Date registro, Refugio refugio ,List<Adopcion> adopciones) {
-        super(registro, refugio);
+    public Adoptante(List<Adopcion> adopciones) {
+        super(RolesDisponibles.ADOPTANTE);
         this.adopciones = adopciones;
     }
 
     public Enumeration<Adopcion> getAdopciones() {
-        return (Enumeration<Adopcion>) adopciones;
+        return java.util.Collections.enumeration(adopciones);
     }
 
     public void addAdopcion(Adopcion a){
@@ -24,5 +27,4 @@ public class Adoptante extends Socio{
     public void adoptar(Animal a, Voluntario v){
         v.tramitarAdopcion(a, this); // Mando al voluntario a tramitar la adopcion
     }
-
 }
