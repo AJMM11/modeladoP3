@@ -40,7 +40,7 @@ public class Main {
             donacionesAntonio.add(new Donacion(100.0, new Date()));
             Antonio.addRol(new Donante(donacionesAntonio, Antonio));
             Antonio.addRol(new Voluntario(new ArrayList<>(), Antonio));
-            Maribel.addRol(new Adoptante(new ArrayList<>()));
+            Maribel.addRol(new Adoptante(new ArrayList<>(), Maribel));
 
             System.out.println("Los roles de Antonio son:");
             Antonio.getRolesNames().asIterator().forEachRemaining(rol -> System.out.println("- " + rol));
