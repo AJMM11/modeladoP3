@@ -15,7 +15,7 @@ public class Adoptante extends Socio{
     }
 
     public Enumeration<Adopcion> getAdopciones() {
-        return (Enumeration<Adopcion>) java.util.Collections.enumeration(adopciones);
+        return java.util.Collections.enumeration(adopciones);
     }
 
     public void addAdopcion(Adopcion a){
@@ -26,6 +26,8 @@ public class Adoptante extends Socio{
     public void adoptar(Animal a, Voluntario v){
         if (a == null || v == null) {
             throw new IllegalArgumentException("Animal o Voluntario no puede ser null");
+        }else if(a.getEstado() != EstadoAnimal.disponible){
+            throw new IllegalArgumentException("El animal no esta disponible para adoptar");
         }
             
         v.tramitarAdopcion(a, this); // Mando al voluntario a tramitar la adopcion

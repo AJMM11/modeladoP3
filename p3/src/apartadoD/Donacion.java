@@ -7,6 +7,9 @@ public class Donacion {
     private Date fecha;
 
     public Donacion(Double cantidad, Date fecha) {
+        if(cantidad <= 0 || cantidad == null){
+            throw new IllegalArgumentException("La cantidad a donar no puede ser nula o negativa");
+        }
         this.cantidad = cantidad;
         this.fecha = fecha;
     }

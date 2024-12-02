@@ -19,18 +19,17 @@ public class Refugio {
         return liquidez;
     }
     
-    public void anadirCantidad(Double c){
-        this.liquidez += c;
-    }
-
     public Enumeration<Animal> getAnimalesRefugiados() {
         return (Enumeration<Animal>) java.util.Collections.enumeration(animalesRefugiados);
     }
-
+    
     public Enumeration<Animal> getAnimalesRegistrados() {
         return (Enumeration<Animal>) java.util.Collections.enumeration(animalesRegistrados);
     }
-
+    
+    public void anadirCantidad(Double c){
+        this.liquidez += c;
+    }
 
     public void eliminarAnimalRefugiado(Animal a){
         if (animalesRefugiados.contains(a)){

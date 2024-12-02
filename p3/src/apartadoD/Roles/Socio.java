@@ -16,6 +16,9 @@ public class Socio {
     private Map<RolesDisponibles, Rol> roles = new HashMap<>(); // Mapa de roles, evita duplicidad (un socio no puede ser 2 veces el mismo rol)
 
     public Socio(Date registro, Refugio refugio) {
+        if (refugio == null) {
+            throw new IllegalArgumentException("Todo socio debe pertenecer a un refugio");
+        }
         this.registro = registro;
         this.refugio = refugio;
     }

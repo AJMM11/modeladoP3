@@ -22,7 +22,7 @@ public class Donante extends Socio {
     }
 
     public Enumeration<Donacion> getDonaciones() {
-        return (Enumeration<Donacion>) java.util.Collections.enumeration(donaciones);
+        return java.util.Collections.enumeration(donaciones);
     }
 
     //Operacion donar

@@ -1,5 +1,4 @@
 package apartadoD.Roles;
-import java.util.Collections;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
@@ -15,11 +14,20 @@ public class Donante extends Rol{
     public Donante(List<Donacion> donaciones, Socio socio) {
         super(RolesDisponibles.DONANTE);
         this.socioRelacionado = socio;
+
+        if(donaciones == null || donaciones.isEmpty()){
+            throw new IllegalArgumentException("La lista de donaciones no puede ser nula");
+        }
         this.donaciones = donaciones;
+        for(Donacion d : donaciones){
+            if(d.getCantidad() > 0 || d!=null){
+                socioRelacionado.getRefugio().anadirCantidad(d.getCantidad());
+            }
+        }
     }
 
     public Enumeration<Donacion> getDonaciones() {
-        return Collections.enumeration(donaciones);
+        return java.util.Collections.enumeration(donaciones);
     }
 
     //Operacion donar

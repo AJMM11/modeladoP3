@@ -14,7 +14,7 @@ public class Voluntario extends Socio {
     }
 
     public Enumeration<Adopcion> getTramites() {
-        return (Enumeration<Adopcion>) java.util.Collections.enumeration(tramites);
+        return java.util.Collections.enumeration(tramites);
     }
 
     //Operacion tramitarAdopcion

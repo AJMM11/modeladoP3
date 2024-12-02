@@ -1,5 +1,4 @@
 package apartadoD.Roles;
-import java.util.Collections;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
@@ -21,11 +20,14 @@ public class Voluntario extends Rol{
     }
 
     public Enumeration<Adopcion> getTramites() {
-        return Collections.enumeration(tramites);
+        return java.util.Collections.enumeration(tramites);
     }
 
     //Operacion tramitarAdopcion
     public void tramitarAdopcion(Animal a, Adoptante ad){
+        if(a == null || ad == null){
+            throw new IllegalArgumentException("Animal o Adoptante no puede ser null");
+        }
         a.setEstado(EstadoAnimal.adoptado); // Cambio el estado del animal a adoptado
         Adopcion adopcion = new Adopcion(new Date(), ad, a); // Creo una nueva adopcion
         a.setAdopcion(adopcion); // Asigno la adopcion al animal
